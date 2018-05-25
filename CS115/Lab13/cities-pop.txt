@@ -1,0 +1,100 @@
+Anaheim
+336265
+Bakersfield
+347483
+Chula Vista
+243916
+Concord
+122067
+Corona
+152374
+Elk Grove
+153015
+Escondido
+143911
+Fontana
+196069
+Fremont
+214089
+Fresno
+494665
+Fullerton
+135161
+Garden Grove
+170883
+Glendale
+191719
+Hayward
+144186
+Huntington Beach
+189992
+Irvine
+212375
+Lancaster
+156663
+Long Beach
+462257
+Los Angeles
+3792621
+Modesto
+201165
+Moreno Valley
+193365
+Oakland
+390724
+Oceanside
+167086
+Ontario
+163924
+Orange
+136416
+Oxnard
+197899
+Palmdale
+152750
+Pasadena
+137122
+Pomona
+149058
+Rancho Cucamonga
+165269
+Riverside
+303871
+Roseville
+118788
+Sacramento
+466488
+Salinas
+150441
+San Bernardino
+209924
+San Diego
+1307402
+San Francisco
+805235
+San Jose
+945942
+Santa Ana
+324528
+Santa Clara
+116468
+Santa Clarita
+176320
+Santa Rosa
+167815
+Simi Valley
+124327
+Stockton
+291707
+Sunnyvale
+140081
+Thousand Oaks
+126683
+Torrance
+145438
+Vallejo
+115942
+Victorville
+115903
+Visalia
+124442
