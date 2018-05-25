@@ -1,5 +1,5 @@
 """
-Lab 1: This program prompts for your name and then greets you by name.
+Lab 1: This program prompts user for favorite movie then relays answer back to user.
 Author: Christian Esperon
 """
 
