@@ -1,0 +1,12 @@
+"""
+Lab 1: This program prompts for user for favorite movie then relays a response.
+Author: Christian Esperon
+"""
+
+
+def main():
+    movie = input('What is your favorite movie? ')
+    print('Ugh, ', movie, "is a terrible movie" '.', sep="")
+
+
+main()
