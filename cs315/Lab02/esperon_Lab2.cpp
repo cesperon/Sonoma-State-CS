@@ -8,7 +8,7 @@
 //Easy BMP Library
 #include <iostream>
 using namespace std;
-/*
+
 #include "EasyBMP.h"
 #include "EasyBMP_BMP.h"
 #include "EasyBMP_DataStructures.h"
@@ -166,39 +166,25 @@ void Fractal(BMP & Image, BMP & Output)
 		Fractal(Image, smallerTile);
 	}
 }
-*/
 
-int quiz2(int N)
-{
-	if (N==0)
-		return 0;
-	else if (N==1)
-		return 1;
-	else if (N%2 == 0)
-		return quiz2(N/2);
-	else 
-		return quiz2((N-1)/2)+1;
-}
 int main(int argc, char * argv[])
-{       int a;
-	a = quiz2(10);
-	cout<< a;
-	//BMP board;
-	//board.SetSize(256,256);
-	//checkerBoard(board);
-	//board.WriteToFile(argv[1]);
+{       
+	BMP board;
+	board.SetSize(256,256);
+	checkerBoard(board);
+	board.WriteToFile(argv[1]);
 
-	//BMP myImage;
-	//myImage.SetSize(256,256);
-	//sierpinski(myImage, 128, 5, 5, 251, 251, 251, 171, 34);
-	//myImage.WriteToFile(argv[2]);
+	BMP myImage;
+	myImage.SetSize(256,256);
+	sierpinski(myImage, 128, 5, 5, 251, 251, 251, 171, 34);
+	myImage.WriteToFile(argv[2]);
 
-	//BMP Image;
-	//BMP Output;
-    //Image.ReadFromFile("in.bmp");
-    //copy(Image, Output);
-    //Fractal(Image, Output);
-    //Image.WriteToFile(argv[3]);
+	BMP Image;
+	BMP Output;
+        Image.ReadFromFile("in.bmp");
+        copy(Image, Output);
+        Fractal(Image, Output);
+        Image.WriteToFile(argv[3]);
 
 
 
