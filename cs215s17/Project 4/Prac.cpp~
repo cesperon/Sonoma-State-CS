@@ -1,0 +1,16 @@
+#include <iostream>
+#include <fstream>
+#include "OrderedSet.hpp"
+#include "WordData.h"
+
+using namespace std;
+
+int main()
+{
+  //WordData oneword;
+  
+  
+  //OrderedSet<WordData> WD;
+
+  return 0;
+}
