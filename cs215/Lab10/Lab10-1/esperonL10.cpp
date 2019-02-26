@@ -1,0 +1,187 @@
+#include "LList.h"
+LList::LNode::LNode ()
+{ // This function will initialize LNode object.
+  
+  data = 0;
+  next = NULL;
+}
+
+LList::LList ()
+{ // This function will initialize linked list object.
+
+  size = 0;
+  first= NULL;
+}
+
+LList::LList (const LList & other)
+{ // This function will copy a linked list object.
+  first = NULL;
+  last = NULL;
+  size = 0;
+  for(LNode * n = other.first; n!=NULL; n= n->next)
+    InsertLast(n->data);
+}
+
+LList::~LList ()
+{ // This function will deallocated the memory of an LList object.
+
+  while(first)
+    DeleteFirst();
+  
+}
+
+LList & LList::operator = (const LList & other)
+{ // This function will allow you to use = to assign one instance to another.
+
+  if (this == &other)
+	return * this;
+  while (first)
+    DeleteFirst();
+  for (LNode * n = other.first; n!= NULL; n = n->next)
+    InsertLast (n->data);
+  return * this;
+  
+}
+
+bool LList::operator == (const LList & other)
+{ // This function will compare linked list objects.
+
+  if (size != other.size)
+    return false;
+  LNode * n = first;
+  LNode * m = other.first;
+  while (n != NULL)
+    {
+      if (n->data != m->data)
+	{
+	  return false;
+	}
+      n = n->next;
+      m = m->next;
+    }
+  return true;
+      
+}
+
+int LList::Size () const
+{ // This function will return the size of the linked list.
+   LList::LNode * np = first;
+  
+   int count = 0;  
+   while(np!= NULL)
+     {
+       count++;
+       np = np-> next;
+     }
+      
+   return count;
+}
+
+ostream & operator << (ostream & outs, const LList & L)
+{ // This function will output the data in the linked list.
+  if (L.size == 0)
+    {
+      return outs;
+    }
+  
+  LList::LNode * np =L.first;
+  
+  while( np != NULL)
+    {
+      outs << np->data;
+      np = np->next;
+      if (np != NULL)
+	cout << ' ';
+    }
+
+    return outs;
+}
+
+bool LList::InsertFirst (const int & value)
+{ // This function will insert a new node into the first position of the
+  // linked list.
+
+  LNode* tmp = new LNode;
+  if(tmp == NULL)
+   {
+     return false;
+   }
+
+  
+   tmp-> data = value;
+  
+   tmp-> next = first;
+
+   first = tmp;
+
+   size ++;
+
+  return true;
+
+  
+}
+
+bool LList::InsertLast (const int & value)
+{ // This function will insert a new node into the last position
+  // of the linked list.
+  
+  if(size == 0)
+    {
+      return InsertFirst(value);
+    }
+
+  LNode * np = first;
+  LNode * mid = NULL;
+
+  while( np != NULL)
+    {
+      mid = np;
+      np = np-> next;
+    }
+
+  LNode * last = new LNode;
+  if( last == NULL)
+    return false;
+  mid-> next = last;
+  last-> next = NULL;
+  last-> data = value;
+  size++;
+  return true;
+  
+  
+}
+
+bool LList::DeleteFirst ()
+{ // This function will delete the first node in the linked list.
+  
+  if(first== NULL)
+     return false;
+
+  LNode* tmp = first-> next;
+  delete first;
+  first = tmp;
+  size-- ;
+  return true;
+}
+
+bool LList::DeleteLast ()
+{ // This function will delete the last node in the linked list.
+  if(first == NULL)
+    return false;
+  if(size == 1)
+    return DeleteFirst();
+
+  LNode* np = first;
+  LNode* mid = NULL;
+  while(np->next != NULL)
+    {
+      mid = np;
+      np = np-> next;
+    }
+  mid->next  = NULL;
+  delete np;
+  size-- ;
+  return true;
+    
+}
+
